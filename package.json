@@ -1,8 +1,13 @@
 {
   "name": "@aistemsplitter/n8n-nodes-aistemsplitter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "n8n community node and automation integration helpers for AIStemSplitter.",
   "type": "module",
+  "author": {
+    "name": "AIStemSplitter",
+    "email": "support@aistemsplitter.org",
+    "url": "https://aistemsplitter.org"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aistemsplitter/aistemsplitter-n8n.git"
