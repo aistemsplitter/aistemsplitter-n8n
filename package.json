@@ -1,6 +1,6 @@
 {
   "name": "@aistemsplitter/n8n-nodes-aistemsplitter",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "n8n community node and automation integration helpers for AIStemSplitter.",
   "type": "module",
   "author": {
@@ -27,7 +27,7 @@
   ],
   "files": [
     "credentials",
-    "n8n",
+    "nodes",
     "pipedream",
     "shared",
     "make-submission.md",
@@ -38,15 +38,15 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "n8n/credentials/AIStemSplitterApi.credentials.js"
+      "credentials/AIStemSplitterApi.credentials.js"
     ],
     "nodes": [
-      "n8n/nodes/AIStemSplitter/AIStemSplitter.node.js"
+      "nodes/AIStemSplitter/AIStemSplitter.node.js"
     ]
   },
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "smoke": "node -e \"Promise.all([import('./shared/aistemsplitter-api.mjs'), import('./n8n/nodes/AIStemSplitter/AIStemSplitter.node.js'), import('./n8n/credentials/AIStemSplitterApi.credentials.js')]).then(() => console.log('AIStemSplitter automation helpers loaded'))\"",
+    "smoke": "node -e \"Promise.all([import('./shared/aistemsplitter-api.mjs'), import('./nodes/AIStemSplitter/AIStemSplitter.node.js'), import('./credentials/AIStemSplitterApi.credentials.js')]).then(() => console.log('AIStemSplitter automation helpers loaded'))\"",
     "pack:dry-run": "npm pack --dry-run"
   },
   "license": "MIT"
