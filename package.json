@@ -1,0 +1,48 @@
+{
+  "name": "@aistemsplitter/n8n-nodes-aistemsplitter",
+  "version": "0.1.0",
+  "description": "n8n community node and automation integration helpers for AIStemSplitter.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aistemsplitter/aistemsplitter-n8n.git"
+  },
+  "homepage": "https://aistemsplitter.org",
+  "bugs": {
+    "url": "https://github.com/aistemsplitter/aistemsplitter-n8n/issues"
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "n8n-node",
+    "aistemsplitter",
+    "audio",
+    "stem-splitter",
+    "vocal-remover"
+  ],
+  "files": [
+    "credentials",
+    "n8n",
+    "pipedream",
+    "shared",
+    "make-submission.md",
+    "zapier-submission.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "n8n/credentials/AIStemSplitterApi.credentials.js"
+    ],
+    "nodes": [
+      "n8n/nodes/AIStemSplitter/AIStemSplitter.node.js"
+    ]
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "smoke": "node -e \"Promise.all([import('./shared/aistemsplitter-api.mjs'), import('./n8n/nodes/AIStemSplitter/AIStemSplitter.node.js'), import('./n8n/credentials/AIStemSplitterApi.credentials.js')]).then(() => console.log('AIStemSplitter automation helpers loaded'))\"",
+    "pack:dry-run": "npm pack --dry-run"
+  },
+  "license": "MIT"
+}
