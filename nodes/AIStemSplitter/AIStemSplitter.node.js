@@ -2,7 +2,7 @@ import {
   createSplit,
   getCredits,
   getSplit,
-} from '../../../shared/aistemsplitter-api.mjs';
+} from '../../shared/aistemsplitter-api.mjs';
 
 export class AIStemSplitter {
   description = {
