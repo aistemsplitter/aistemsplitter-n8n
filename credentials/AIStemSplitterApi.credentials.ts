@@ -1,9 +1,16 @@
-export class AIStemSplitterApi {
+import type {
+  IAuthenticateGeneric,
+  ICredentialTestRequest,
+  ICredentialType,
+  INodeProperties,
+} from 'n8n-workflow';
+
+export class AIStemSplitterApi implements ICredentialType {
   name = 'aiStemSplitterApi';
   displayName = 'AIStemSplitter API';
   documentationUrl = 'https://aistemsplitter.org/developers/api';
 
-  authenticate = {
+  authenticate: IAuthenticateGeneric = {
     type: 'generic',
     properties: {
       headers: {
@@ -12,7 +19,7 @@ export class AIStemSplitterApi {
     },
   };
 
-  test = {
+  test: ICredentialTestRequest = {
     request: {
       baseURL: '={{$credentials.apiBaseUrl}}',
       url: '/credits',
@@ -20,7 +27,7 @@ export class AIStemSplitterApi {
     },
   };
 
-  properties = [
+  properties: INodeProperties[] = [
     {
       displayName: 'API Key',
       name: 'apiKey',

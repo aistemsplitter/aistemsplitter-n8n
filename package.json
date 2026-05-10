@@ -1,6 +1,6 @@
 {
   "name": "@aistemsplitter/n8n-nodes-aistemsplitter",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "n8n community node and automation integration helpers for AIStemSplitter.",
   "type": "module",
   "author": {
