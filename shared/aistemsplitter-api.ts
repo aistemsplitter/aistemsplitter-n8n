@@ -62,7 +62,7 @@ export function normalizeConfig(
 
 export async function getCredits(
   config: AIStemSplitterApiConfig,
-  fetchImpl: FetchImpl = globalThis.fetch,
+  fetchImpl: FetchImpl = fetch,
 ): Promise<unknown> {
   const normalized = normalizeBaseConfig(config);
   const response = await fetchImpl(`${normalized.apiBaseUrl}/credits`, {
@@ -78,7 +78,7 @@ export async function getCredits(
 
 export async function createSplit(
   config: CreateSplitConfig,
-  fetchImpl: FetchImpl = globalThis.fetch,
+  fetchImpl: FetchImpl = fetch,
 ): Promise<unknown> {
   const normalized = normalizeBaseConfig(config);
   const response = await fetchImpl(`${normalized.apiBaseUrl}/audio/splits`, {
@@ -103,7 +103,7 @@ export async function createSplit(
 
 export async function getSplit(
   config: GetSplitConfig,
-  fetchImpl: FetchImpl = globalThis.fetch,
+  fetchImpl: FetchImpl = fetch,
 ): Promise<unknown> {
   const normalized = normalizeBaseConfig(config);
   const response = await fetchImpl(
