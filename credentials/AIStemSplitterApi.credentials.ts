@@ -35,6 +35,8 @@ export class AIStemSplitterApi implements ICredentialType {
       typeOptions: { password: true },
       default: '',
       required: true,
+      description:
+        'AIStemSplitter API key. Generate one at https://aistemsplitter.org/settings/developer.',
     },
     {
       displayName: 'API Base URL',
@@ -42,6 +44,7 @@ export class AIStemSplitterApi implements ICredentialType {
       type: 'string',
       default: 'https://api.aistemsplitter.org/v1',
       required: true,
+      description: 'Base URL of the AIStemSplitter REST API.',
     },
   ];
 }

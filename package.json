@@ -1,8 +1,7 @@
 {
   "name": "@aistemsplitter/n8n-nodes-aistemsplitter",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "n8n community node and automation integration helpers for AIStemSplitter.",
-  "type": "module",
   "author": {
     "name": "AIStemSplitter",
     "email": "support@aistemsplitter.org",
@@ -25,11 +24,11 @@
     "stem-splitter",
     "vocal-remover"
   ],
+  "main": "dist/shared/aistemsplitter-api.js",
+  "types": "dist/shared/aistemsplitter-api.d.ts",
   "files": [
-    "credentials",
-    "nodes",
+    "dist",
     "pipedream",
-    "shared",
     "make-submission.md",
     "zapier-submission.md",
     "README.md",
@@ -38,16 +37,27 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "credentials/AIStemSplitterApi.credentials.js"
+      "dist/credentials/AIStemSplitterApi.credentials.js"
     ],
     "nodes": [
-      "nodes/AIStemSplitter/AIStemSplitter.node.js"
+      "dist/nodes/AIStemSplitter/AIStemSplitter.node.js"
     ]
   },
   "scripts": {
-    "test": "node --test tests/*.test.mjs",
-    "smoke": "node -e \"Promise.all([import('./shared/aistemsplitter-api.mjs'), import('./nodes/AIStemSplitter/AIStemSplitter.node.js'), import('./credentials/AIStemSplitterApi.credentials.js')]).then(() => console.log('AIStemSplitter automation helpers loaded'))\"",
+    "build": "rm -rf dist && tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run build",
+    "test": "node --test tests/*.test.mjs tests/*.test.cjs",
+    "smoke": "node -e \"require('./dist/shared/aistemsplitter-api.js'); require('./dist/nodes/AIStemSplitter/AIStemSplitter.node.js'); require('./dist/credentials/AIStemSplitterApi.credentials.js'); console.log('AIStemSplitter automation helpers loaded')\"",
     "pack:dry-run": "npm pack --dry-run"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "n8n-workflow": "^1.82.0",
+    "typescript": "^5.4.5"
   },
   "license": "MIT"
 }

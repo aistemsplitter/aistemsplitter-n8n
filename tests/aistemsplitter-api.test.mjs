@@ -7,7 +7,7 @@ import {
   getCredits,
   getSplit,
   normalizeConfig,
-} from '../shared/aistemsplitter-api.mjs';
+} from '../dist/shared/aistemsplitter-api.js';
 
 test('normalizeConfig trims API base URL', () => {
   assert.deepEqual(
