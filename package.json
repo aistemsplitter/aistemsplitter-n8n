@@ -1,6 +1,6 @@
 {
   "name": "@aistemsplitter/n8n-nodes-aistemsplitter",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "n8n community node and automation integration helpers for AIStemSplitter.",
   "author": {
     "name": "AIStemSplitter",
@@ -28,9 +28,6 @@
   "types": "dist/shared/aistemsplitter-api.d.ts",
   "files": [
     "dist",
-    "pipedream",
-    "make-submission.md",
-    "zapier-submission.md",
     "README.md",
     "LICENSE"
   ],
@@ -44,7 +41,7 @@
     ]
   },
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc && cp nodes/AIStemSplitter/aistemsplitter.svg dist/nodes/AIStemSplitter/aistemsplitter.svg",
     "prepare": "npm run build",
     "prepublishOnly": "npm run build",
     "pretest": "npm run build",
